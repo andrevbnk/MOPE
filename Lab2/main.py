@@ -46,8 +46,10 @@ def testDisOd(y1,y2,y3,m,r):
     m-розмір списка, r - R критичне"""
     if ruv(y1,y2,m)<r and ruv(y3,y2,m)<r and ruv(y3,y1,m)<r :
         print("Дисперсія однорідна")
+        return False
     else:
         print("Дисперсія неоднорідна")
+        return True
 
 def mxn(x1,x2,x3):
     return (x1+x2+x3)/3
@@ -59,7 +61,7 @@ x1min=-20
 x1max=30
 x2min=20
 x2max=60
-
+m=5
 y1=genY(5)
 y2=genY(5)
 y3=genY(5)
@@ -73,8 +75,10 @@ print("x1     x2     y1     y2     y3     y4     y5 \n"
       "{0:2}{1:7}{2:7}{3:7}{4:7}{5:7}{6:7}\n".format(x12,x22,y2[0],y2[1],y2[2],y2[3],y2[4]) +
       "{0:2}{1:7}{2:7}{3:7}{4:7}{5:7}{6:7}".format(x13,x23,y3[0],y3[1],y3[2],y3[3],y3[4]))
 
+while(testDisOd(y1,y2,y3,m,25)):
+    m=m+1
+    testDisOd(y1,y2,y3,m,25)
 
-testDisOd(y1,y2,y3,5,2)
 
 mx1=mxn(x11,x12,x13)
 mx2=mxn(x21,x22,x23)
@@ -114,4 +118,3 @@ print("a0+a1*x1max+a2*x2min="+str(round(a0n+a1n*x1max+a2n*x2min,2)))
 print("a0+a1*x1min+a2*x2max="+str(round(a0n+a1n*x1min+a2n*x2max,2)))
 
 #print(mxn(serY(y1),serY(y2),serY(y3)))
-
