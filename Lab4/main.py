@@ -149,8 +149,10 @@ f2 = N = 4
 Gt = 0.7679
 if Gp < Gt:
     print("Дисперсія однорідна")
+    print(datetime.now() - start_time)
 else:
     print("Дисперсія  неоднорідна")
+    print(datetime.now() - start_time)
 print("Критерій Стьюдента")
 sb = sum(dcouple)/N
 ssbs = sb/N*m
@@ -379,8 +381,10 @@ if cont==1:
     Gt = 0.5157
     if Gp < Gt:
         print("Дисперсія однорідна")
+        print(datetime.now() - start_time)
     else:
         print("Дисперсія  неоднорідна")
+        print(datetime.now() - start_time)
 
     print("Критерій Стьюдента")
     sb = sum(dcouple)/N
