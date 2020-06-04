@@ -1,6 +1,14 @@
 import random
 import numpy as np
 import copy
+from datetime import datetime
+import time
+
+start_time = datetime.now()
+
+
+
+
 x1min = -20
 x1max = 70
 x2min = -15
@@ -166,15 +174,19 @@ print("f3 = f1*f2, з таблиці tтабл = 2.306")
 #print(t0,t1,t2,t3)
 if (t0<ttabl):
     print("t0<ttabl, b0 не значимий")
+    print(datetime.now() - start_time)
     b0=0
 if (t1<ttabl):
     print("t1<ttabl, b1 не значимий")
+    print(datetime.now() - start_time)
     b1=0
 if (t2<ttabl):
     print("t2<ttabl, b2 не значимий")
+    print(datetime.now() - start_time)
     b2=0
 if (t3<ttabl):
     print("t3<ttabl, b3 не значимий")
+    print(datetime.now() - start_time)
     b3=0
 
 yy1 = b0 + b1*x1min + b2*x2min + b3*x3min
@@ -196,11 +208,14 @@ Ft=4.5
 cont = 0
 if Fp>Ft:
     print("Fp=",round(Fp,2),">Ft",Ft,"Рівняння неадекватно оригіналу")
+    print(datetime.now() - start_time)
     cont=1
 else:
     print("Fp=",round(Fp,2),"<Ft",Ft,"Рівняння адекватно оригіналу")
+    print(datetime.now() - start_time)
 if cont==1:
     print("З взаємодією")
+    
     Yall=[y1av1, y2av2, y3av3, y4av4, y5av5, y6av6, y7av7, y8av8]
 
     my = (y1av1 + y2av2 + y3av3 + y4av4 + y5av5 + y6av6 + y7av7 + y8av8)/8
@@ -340,6 +355,7 @@ if cont==1:
     print("y6av6="+str(round(b0 + b1*X1[5]+b2*X2[5]+b3*X3[5]+b4*X1[5]*X2[5]+b5*X1[5]*X3[5]+b6*X2[5]*X3[5]+b7*X1[5]*X2[5]*X3[5],2))+"="+ str(round(y6av6,2)))
     print("y7av7="+str(round(b0 + b1*X1[6]+b2*X2[6]+b3*X3[6]+b4*X1[6]*X2[6]+b5*X1[6]*X3[6]+b6*X2[6]*X3[6]+b7*X1[6]*X2[6]*X3[6],2))+"="+ str(round(y7av7,2)))
     print("y8av8="+str(round(b0 + b1*X1[7]+b2*X2[7]+b3*X3[7]+b4*X1[7]*X2[7]+b5*X1[7]*X3[7]+b6*X2[7]*X3[7]+b7*X1[7]*X2[7]*X3[7],2))+"="+ str(round(y8av8,2)))
+    print(datetime.now() - start_time)
 
     print("Значення приблизно співпадають")
 
@@ -353,7 +369,7 @@ if cont==1:
     d7 = ((Y1[6] - y1av1)**2 + (Y2[6] - y2av2)**2 + (Y3[6] - y3av3)**2)/3
     d8 = ((Y1[7] - y1av1)**2 + (Y2[7] - y2av2)**2 + (Y3[7] - y3av3)**2)/3
     print("d1=", round(d1,2),"d2=", round(d2,2),"d3=", round(d3,2),"d4=", round(d4,2),"d5=", round(d5,2),"d6=", round(d6,2),"d7=", round(d7,2),"d8=", round(d8,2))
-
+    print(datetime.now() - start_time)
     dcouple = [d1, d2, d3, d4, d5, d6, d7, d8]
 
     m = 3
@@ -398,34 +414,42 @@ if cont==1:
     d=8
     if (t0<ttabl):
         print("t0<ttabl, b0 не значимий")
+        print(datetime.now() - start_time)
         b0=0
         d=d-1
     if (t1<ttabl):
         print("t1<ttabl, b1 не значимий")
+        print(datetime.now() - start_time)
         b1=0
         d=d-1
     if (t2<ttabl):
         print("t2<ttabl, b2 не значимий")
+        print(datetime.now() - start_time)
         b2=0
         d=d-1
     if (t3<ttabl):
         print("t3<ttabl, b3 не значимий")
+        print(datetime.now() - start_time)
         b3=0
         d=d-1
     if (t4<ttabl):
         print("t4<ttabl, b4 не значимий")
+        print(datetime.now() - start_time)
         b4=0
         d=d-1
     if (t5<ttabl):
         print("t5<ttabl, b5 не значимий")
+        print(datetime.now() - start_time)
         b5=0
         d=d-1
     if (t6<ttabl):
         print("t6<ttabl, b6 не значимий")
+        print(datetime.now() - start_time)
         b6=0
         d=d-1
     if (t7<ttabl):
         print("t7<ttabl, b7 не значимий")
+        print(datetime.now() - start_time)
         b7=0
         d=d-1
     yy1 = b0+b1*x1min+b2*x2min+b3*x3min+b4*x1min*x2min+b5*x1min*x3min+b6*x2min*x3min+b7*x1min*x2min*x3min
@@ -458,8 +482,8 @@ if cont==1:
     cont=0
     if Fp>Ft:
         print("Fp=",round(Fp,2),">Ft",Ft,"Рівняння неадекватно оригіналу")
+        print(datetime.now() - start_time)
         cont=1
     else:
         print("Fp=",round(Fp,2),"<Ft",Ft,"Рівняння адекватно оригіналу")
-
-
+        print(datetime.now() - start_time)
